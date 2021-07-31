@@ -1,0 +1,12 @@
+.cart {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+}
