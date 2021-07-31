@@ -1,14 +1,23 @@
 import loadJson from 'load-json-file';
+import {getProductsCollection} from './db/connect.mjs'
 
-export let products = loadJson.sync('./data/products.json');
+// export let products = loadJson.sync('./data/products.json');
 
-export function getProducts() {
-    return products;
+// 
+export function getProducts(){
+    return getProductsCollection()
+           .find({})
+           .toArray();
 }
 
-export function getProduct(id) {
-    const [ product ] = products.filter(product => product.id == id);
-    return product
+// export function getProduct(id) {
+//     const [ product ] = products.filter(product => product.id == id);
+//     return product
+// }
+export function getProduct(id){
+    return getProductsCollection()
+           .find({id: parseInt(id)})
+           .toArray();
 }
 
 export function addProduct(product) {
