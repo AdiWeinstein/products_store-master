@@ -36,30 +36,30 @@ POST /users/9/images - Create a new image where user id === 9
 
 */
 
-usersRouter.get('/', (req, res) => {
-    res.send(getUsers());
+usersRouter.get('/', async(req, res) => {
+    res.send(await getUsers());
 });
 
-usersRouter.get('/:id', (req, res) => {
-    res.send(getUser(req.params.id));
+usersRouter.get('/:id', async(req, res) => {
+    res.send(await getUser(req.params.id));
 });
 
-usersRouter.get('/:id/products', (req, res) => {
-    res.send(getProductsByUserId(req.params.id));
+usersRouter.get('/:id/products', async(req, res) => {
+    res.send(await getProductsByUserId(req.params.id));
 });
 
-usersRouter.post('/', (req, res) => {
-    res.send(addUser(req.body));
+usersRouter.post('/', async(req, res) => {
+    res.send(await addUser(req.body));
 });
 
 // Update single product from the list
-usersRouter.put('/:id', (req, res) => {
-    res.send(editUser(req.params.id, req.body))
+usersRouter.put('/:id', async(req, res) => {
+    res.send(await editUser(req.params.id, req.body))
 });
 
 // Delete single product from the list
-usersRouter.delete('/:id', (req, res) => {
-    res.send(deleteUser(req.params.id));
+usersRouter.delete('/:id',async(req, res) => {
+    res.send(await deleteUser(req.params.id));
 });
 
 usersRouter.get('/:id/posts', (req, res) => {

@@ -8,28 +8,28 @@ import { deleteProduct } from './products.service.mjs';
 export const productsRouter = express.Router();
 
 // Get products list
-productsRouter.get('/', (req, res) => {
-    res.send(getProducts());
+productsRouter.get('/', async(req, res) => {
+    res.send(await getProducts());
 });
 
 // Create new product in the products list
-productsRouter.post('/', (req, res) => {
-    res.send(addProduct(req.body));
+productsRouter.post('/', async(req, res) => {
+    res.send(await addProduct(req.body));
 });
 
 // Get single product from the list
-productsRouter.get('/:id', (req, res) => {
-    res.send(getProduct(req.params.id));
+productsRouter.get('/:id', async(req, res) => {
+    res.send(await getProduct(req.params.id));
 });
 
 // Update single product from the list
-productsRouter.put('/:id', (req, res) => {
-    res.send(editProduct(req.params.id, req.body))
+productsRouter.put('/:id', async(req, res) => {
+    res.send(await editProduct(req.params.id, req.body))
 });
 
 // Delete single product from the list
-productsRouter.delete('/:id', (req, res) => {
-    res.send(deleteProduct(req.params.id));
+productsRouter.delete('/:id', async(req, res) => {
+    res.send(await deleteProduct(req.params.id));
 });
 
 

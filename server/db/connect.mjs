@@ -9,5 +9,8 @@ client.connect(async () => {
 })
 
 export function getProductsCollection() {
-    return db.collection('Products').find({}).toArray()
+    return db.collection('Products');
+}
+export function getUsersCollection() {
+    return db.collection('Users');
 }
