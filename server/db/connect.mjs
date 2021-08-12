@@ -1,3 +1,13 @@
+
+//----mongoose----
+
+import Mongoose from "mongoose";
+
+Mongoose.connect('mongodb://localhost:27017/fakestore', {useNewUrlParser: true, useUnifiedTopology: true});
+
+
+/* 
+----- mongo ----
 import Mongo from 'mongodb';
 
 const client = new Mongo.MongoClient('mongodb://localhost:27017');
@@ -14,3 +24,5 @@ export function getProductsCollection() {
 export function getUsersCollection() {
     return db.collection('Users');
 }
+--------------------------------------------
+*/

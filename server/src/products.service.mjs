@@ -1,5 +1,5 @@
 import loadJson from 'load-json-file';
-import { getProductsCollection } from '../db/connect.mjs'
+// import { getProductsCollection } from '../db/connect.mjs'
 import { getUser} from './users.service.mjs';
 import Mongo from 'mongodb'
 // export let products = loadJson.sync('./data/products.json');

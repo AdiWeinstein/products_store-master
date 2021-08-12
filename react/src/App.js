@@ -16,7 +16,7 @@ import CatalogProvider from './CatalogContext';
 import CartProvider from './CartContext';
 
 function App() {
-
+  
   return (
     <div className="App">
     <div className="Header">

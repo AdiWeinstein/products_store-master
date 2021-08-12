@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "load-json-file": "^6.2.0",
+    "mongoose": "^5.13.5",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "querystringify": "^2.2.0"

@@ -4,6 +4,7 @@ import {CartContext} from './CartContext';
 import {
   Link,
 } from "react-router-dom";
+import styled from 'styled-components';
 
 export default function Product({
   category,
@@ -14,6 +15,42 @@ export default function Product({
   price,
   onAddToCart,
 }) {
+
+
+  const Title = styled.h3`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 5px;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  background: white;
+`;
+
+const CardItem = styled.div`
+  width: 300px;
+  border: 1px solid palevioletred;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+`;
+
+const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: 'black'
+};
+
+const Image = {
+  width:"90%",
+}
 
 
 const {addToCart} = useContext(CartContext);
@@ -32,18 +69,19 @@ const onEditProduct = () =>{
 
 
 
+
   return (
-    <div className="product">
-      <Link to={`/products/${id}`}>
-        <img src={image} className="product-image"/>
-     </Link>
-      <span>{category}</span>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <button onClick={() => addToCart(id)}>Add to Cart (${price})</button>
-      <button onClick= {onDeleteProduct}>Delete Product</button>
-      <button onClick= {onEditProduct}>Edit</button>
-    </div>
+    <CardItem>
+      <Link  style={linkStyle} to={`/products/${id}`}>
+        <img src={image} className="product-image" style={Image}/>
+        <span>{category}</span>
+        <Title>{title}</Title>
+        <p>{description}</p>
+        <Button onClick={() => addToCart(id)}>Add to Cart (${price})</Button>
+        <Button onClick= {onDeleteProduct}>Delete Product</Button>
+        <Button onClick= {onEditProduct}>Edit</Button>
+      </Link>
+    </CardItem>
   );
 }
 

@@ -1,4 +1,15 @@
 import {useRef} from 'react';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
 
 export default function AddNewProduct(){
     const idRef = useRef();
@@ -32,7 +43,7 @@ export default function AddNewProduct(){
                 <input ref={priceRef} placeholder="Price"/>
                 <input ref={descriptionRef} placeholder="description"/>
                 <input ref={imageRef} placeholder="image" value="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"/>
-                <button onClick= {onAddNewProduct}> Add new product</button>
+                <Button onClick= {onAddNewProduct}> Add new product</Button>
             </div>
     )
 }
